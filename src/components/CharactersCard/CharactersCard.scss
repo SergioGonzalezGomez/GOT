@@ -1,0 +1,22 @@
+.charactercard-container{
+    width: 200px;
+    object-fit: cover;
+    .charactercard-img {
+        max-width: 100%;
+        
+    }
+}
+
+@media (min-width: 1024px) {
+    .charactercard-container {
+        width: 180px;
+        max-height: 205px;
+        margin: 50px 5px;
+        object-fit: cover;
+        .charactercard-img {
+            object-fit: cover;
+            
+        }
+      
+    }
+  }
