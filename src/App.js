@@ -14,18 +14,20 @@ export const Context = React.createContext({});
 
 function App() {
   const [page, setPage] = React.useState("");
+  const [search, setSearch] = React.useState("");
+
 
   return (
     <div className="App">
-      <Context.Provider value={{ page, setPage }}>
+      <Context.Provider value={{ page, setPage, search, setSearch }}>
         <Router>
           <Header />
           <div className="main">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/houses" element={<Houses />} />
+              <Route path="/houses" element={<Houses search={search} />} />
               <Route path="/houses/:name" element={<HousesDetail />} />
-              <Route path="/characters" element={<Characters />} />
+              <Route path="/characters" element={<Characters search={search} />} />
               <Route path="/characters/:name" element={<CharactersDetail />} />
               <Route path="/chronology" element={<Chronology />} />
             </Routes>

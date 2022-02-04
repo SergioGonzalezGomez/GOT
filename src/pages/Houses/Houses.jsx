@@ -4,11 +4,11 @@ import {HousesCard} from '../../components/HousesCard/HousesCard';
 import { Context } from "../../App";
 import './Houses.scss';
 
-export const Houses = () => {
+export const Houses = ({search}) => {
   const {page, setPage} = React.useContext(Context);
   
   React.useEffect(() => {
-    setPage("House");
+    setPage("Houses");
     console.log(page);
     page === "Home"
     ? document.body.classList.add("home")
@@ -22,8 +22,16 @@ export const Houses = () => {
     getHouses().then((data) => setHouses(data))
   },[])
   console.log(houses);
+
+  const filteredHouses = houses.filter((house) =>
+    house.name.toLowerCase().includes(search)
+  );
+  console.log(filteredHouses)
+
+  const resultHouses = filteredHouses.length > 0 ? filteredHouses : houses
+
   return <div className="houses-list">
-    {houses.map((house) => {
+    {resultHouses.map((house) => {
         return <HousesCard key={house.id} house={house} />
       })}
   </div>;
