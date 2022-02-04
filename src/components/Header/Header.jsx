@@ -6,14 +6,18 @@ import {Link} from 'react-router-dom';
 import "./Header.scss";
 
 export const Header = () => {
-  const { page } = React.useContext(Context);
+  const { page, setSearch } = React.useContext(Context);
   console.log(page);
+  const changeSearch = (value) =>{
+    setSearch(value);
+    console.log(value)
+  }
 
   return (
     <div className="header">
       <div>
       {(page === "Characters" || page === "Houses") && <div className="search">
-         <Search />
+         <Search changeSearch={changeSearch}/>
       </div>}
 
       {(page === "CharactersDetail" ||
