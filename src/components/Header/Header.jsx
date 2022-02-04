@@ -2,6 +2,7 @@ import React from "react";
 import { Context } from "../../App";
 import { BackButton } from "../BackButton/BackButton";
 import { Search } from "../Search/Search";
+import {Link} from 'react-router-dom';
 import "./Header.scss";
 
 export const Header = () => {
@@ -10,19 +11,21 @@ export const Header = () => {
 
   return (
     <div className="header">
-      <div className="search">
-        {page === "Characters" || (page === "Houses" && <Search />)}
-      </div>
+      <div>
+      {(page === "Characters" || page === "Houses") && <div className="search">
+         <Search />
+      </div>}
 
-      <div className="back">
-        {page === "CharactersDetail" ||
-          (page === "HousesDetail" && <BackButton />)}
+      {(page === "CharactersDetail" ||
+          page === "HousesDetail") && <div className="back">
+         <BackButton />
+      </div>}
       </div>
 
       <div className="header_flags">
-        {page !== "Home" && <img src="./images/home.png" alt="home" />}
-        <img src="./images/spain.png" alt="spain flag" />
-        <img src="./images/united-kingdom.png" alt="united-kingdom flag" />
+        {page !== "Home" && <Link to="/"><img src="/images/home.png" alt="home" /></Link>}
+        <img src="/images/spain.png" alt="spain" />
+        <img src="/images/united-kingdom.png" alt="united-kingdom" />
       </div>
     </div>
   );
