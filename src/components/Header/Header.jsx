@@ -21,8 +21,8 @@ export const Header = () => {
 
       <div className="header_flags">
         {page !== "Home" && <img src="./images/home.png" alt="home" />}
-        <img src="./images/spain.png" alt="spain" />
-        <img src="./images/united-kingdom.png" alt="united-kingdom" />
+        <img src="./images/spain.png" alt="spain flag" />
+        <img src="./images/united-kingdom.png" alt="united-kingdom flag" />
       </div>
     </div>
   );
