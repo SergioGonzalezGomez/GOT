@@ -10,13 +10,15 @@ export const Header = () => {
 
   return (
     <div className="header">
-      <div className="search">
-        {page === "Characters" || (page === "Houses" && <Search />)}
-      </div>
+      <div>
+      {(page === "Characters" || page === "Houses") && <div className="search">
+         <Search />
+      </div>}
 
-      <div className="back">
-        {page === "CharactersDetail" ||
-          (page === "HousesDetail" && <BackButton />)}
+      {(page === "CharactersDetail" ||
+          page === "HousesDetail") && <div className="back">
+         <BackButton />
+      </div>}
       </div>
 
       <div className="header_flags">

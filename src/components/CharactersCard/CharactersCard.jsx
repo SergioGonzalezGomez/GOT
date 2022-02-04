@@ -3,7 +3,7 @@ import {Link, generatePath} from 'react-router-dom';
 import './CharactersCard.scss';
 
 export const CharactersCard = ({character}) => {
-  console.log(character);
+  //console.log(character);
   character.image = character.name === "Oberyn Martell" ?   "./images/oberyn-martell.webp" : character.image;
   character.image = character.name === "Grenn" ?   "./images/grenn.webp" : character.image;
   return <div className="charactercard-container">

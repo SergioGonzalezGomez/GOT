@@ -11,7 +11,7 @@ export const Home = () => {
     page === "Home"
     ? document.body.classList.add("home")
     : document.body.classList.length !== 0 &&
-      document.body.classList.remove("");
+      document.body.classList.remove("home");
   }, [page]);
   
   

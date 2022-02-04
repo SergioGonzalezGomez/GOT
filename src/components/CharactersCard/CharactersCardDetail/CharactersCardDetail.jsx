@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { getHousesByName } from "../../../api/fetchToApi";
 import "./CharactersCardDetail.scss";
 
-export const CharactersCardDetail = ({ character }) => {
-  console.log(character);
-  const [houses, setHouses] = useState([]);
+export const CharactersCardDetail = ({ character, houses }) => {
+  //console.log(character);
+  //console.log(houses)
 
-  useEffect(() => {
-    getHousesByName(character.house).then((data) => setHouses(data));
-  }, []);
   return (
     <div className="Character-card-main">
       <div className="Character-card-image">
@@ -19,7 +15,7 @@ export const CharactersCardDetail = ({ character }) => {
       <div className="Character-card-details">
         <div className="Character-card-detail">
           <h3>CASA</h3>
-
+          
           {houses.length != 0 && (
             <img
               className="Character-card__detail-img"
