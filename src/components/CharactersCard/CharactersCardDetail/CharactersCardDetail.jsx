@@ -5,3 +5,4 @@ export const CharactersCardDetail = ({character}) => {
     <img src={character.image} alt={character.name} />
   </div>;
 };
+ 
