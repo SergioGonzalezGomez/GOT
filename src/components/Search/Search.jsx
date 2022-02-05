@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Search.scss"
 
 export const Search = ({changeSearch}) => {  
   
@@ -7,10 +8,11 @@ const handleInput = (ev) => {
   changeSearch(value);
 };
   return <div className="form">
+<img className="img-search" src="/images/search.png" alt="search" />
   <form>
-    <img src="/images/search.png" alt="back" />
+    
     <input
-      type="text" onChange={handleInput} placeholder="Search"
+      type="text" onChange={handleInput} placeholder="Buscar..."
     />
   </form>
 </div>;
