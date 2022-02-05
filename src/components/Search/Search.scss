@@ -1,0 +1,22 @@
+.form{
+    display: flex;
+    margin:0;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    
+   
+    input{
+        border:none;
+        margin: 5px;
+        height: 20px;
+        background-color: black;
+        border-bottom: 1px solid white;
+        width: 520px;
+        color: white;
+    
+    }
+    .img-search{
+        margin: 3px 5px;
+    }
+   }
