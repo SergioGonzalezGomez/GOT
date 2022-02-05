@@ -5,12 +5,13 @@ import './Characters.scss';
 import { Context } from "../../App";
 
 export const Characters = ({search}) => {
-  const {page, setPage} = React.useContext(Context);
+  const {page, setPage, setSearch} = React.useContext(Context);
   console.log(search);
 
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
+    setSearch('');
     getCharacters().then((data) => setCharacters(data))
     
     setPage("Characters");

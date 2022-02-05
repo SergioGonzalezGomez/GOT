@@ -5,12 +5,13 @@ import { ChronologyCard } from "../../components/ChronologyCard/ChronologyCard";
 import './Chronology.scss';
 
 export const Chronology = () => {
-  const {page, setPage} = React.useContext(Context);
+  const {page, setPage,setSearch} = React.useContext(Context);
   const [characters, setCharacters] = useState([]);
   const [direction, setDirection] = useState(true);
   console.log(direction);
 
   React.useEffect(() => {
+    setSearch('')
     getCharacters().then((data) => setCharacters(data))
     setPage("Chronology");
     
