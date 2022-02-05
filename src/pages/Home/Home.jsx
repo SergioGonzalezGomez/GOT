@@ -3,10 +3,11 @@ import { Context } from "../../App";
 import './Home.scss'
 
 export const Home = () => {
-  const {page, setPage} = React.useContext(Context);
+  const {page, setPage, setSearch} = React.useContext(Context);
   
   React.useEffect(() => {
     setPage("Home");
+    setSearch('');
     console.log(page);
     page === "Home"
     ? document.body.classList.add("home")

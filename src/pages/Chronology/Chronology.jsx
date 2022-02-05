@@ -5,12 +5,13 @@ import { ChronologyCard } from "../../components/ChronologyCard/ChronologyCard";
 import './Chronology.scss';
 
 export const Chronology = () => {
-  const {page, setPage} = React.useContext(Context);
+  const {page, setPage,setSearch} = React.useContext(Context);
   const [characters, setCharacters] = useState([]);
   const [direction, setDirection] = useState(true);
   console.log(direction);
 
   React.useEffect(() => {
+    setSearch('')
     getCharacters().then((data) => setCharacters(data))
     setPage("Chronology");
     
@@ -23,6 +24,7 @@ export const Chronology = () => {
   return <div>
     <button className="chronology-button" onClick={() => setDirection(!direction)}>O</button>
     <div className="chronology-list">
+
      {characters.length !== 0 && characters.filter(character => character.age != null && character.age.age > 0).sort((a, b) => {
        
        if (a.age.age > b.age.age) {
@@ -36,6 +38,7 @@ export const Chronology = () => {
      }).map((character) => {
         return <ChronologyCard key={character.id} character={character} />
       })}
+
       </div>
     </div>;
 };

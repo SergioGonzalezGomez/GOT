@@ -9,17 +9,25 @@ import { CharactersDetail } from "./pages/Characters/CharactersDetail/Characters
 import { Chronology } from "./pages/Chronology/Chronology";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
+import { useTranslation } from 'react-i18next';
 
 export const Context = React.createContext({});
 
 function App() {
   const [page, setPage] = React.useState("");
   const [search, setSearch] = React.useState("");
+  
+  const { t, i18n } = useTranslation(['translation']);
+
+
+  const changeLanguage = code => {
+      i18n.changeLanguage(code);
+  };
 
 
   return (
     <div className="App">
-      <Context.Provider value={{ page, setPage, search, setSearch }}>
+      <Context.Provider value={{ page, setPage, search, setSearch, t, changeLanguage }}>
         <Router>
           <Header />
           <div className="main">

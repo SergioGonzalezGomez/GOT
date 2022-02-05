@@ -5,9 +5,10 @@ import { Context } from "../../App";
 import './Houses.scss';
 
 export const Houses = ({search}) => {
-  const {page, setPage} = React.useContext(Context);
+  const {page, setPage, setSearch} = React.useContext(Context);
   
   React.useEffect(() => {
+    setSearch('');
     setPage("Houses");
     console.log(page);
     page === "Home"

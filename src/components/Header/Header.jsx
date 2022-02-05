@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import "./Header.scss";
 
 export const Header = () => {
-  const { page, setSearch } = React.useContext(Context);
+  const { page, setSearch,changeLanguage } = React.useContext(Context);
   console.log(page);
   const changeSearch = (value) =>{
     setSearch(value);
@@ -28,8 +28,8 @@ export const Header = () => {
 
       <div className="header_flags">
         {page !== "Home" && <Link to="/"><img src="/images/home.png" alt="home" /></Link>}
-        <img src="/images/spain.png" alt="spain" />
-        <img src="/images/united-kingdom.png" alt="united-kingdom" />
+        <img src="/images/spain.png" alt="spain" onClick={() => changeLanguage('es')}/>
+        <img src="/images/united-kingdom.png" alt="united-kingdom" onClick={() => changeLanguage('en')}/>
       </div>
     </div>
   );
