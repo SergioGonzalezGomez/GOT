@@ -3,7 +3,7 @@ import { Context } from "../../App";
 import './Home.scss'
 
 export const Home = () => {
-  const {page, setPage, setSearch} = React.useContext(Context);
+  const {page, setPage, setSearch, t} = React.useContext(Context);
   
   React.useEffect(() => {
     setPage("Home");
@@ -18,7 +18,7 @@ export const Home = () => {
   
   return (
     <div className="home-container">
-      <h1>GAME OFF THRONES</h1>
+      <h1>{t('name')}</h1>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 import React from 'react';
 import "./Search.scss"
+import { Context } from "../../App";
 
 export const Search = ({changeSearch}) => {  
+  const {t} = React.useContext(Context);
   
 const handleInput = (ev) => {
   const {value} = ev.target;
@@ -12,7 +14,7 @@ const handleInput = (ev) => {
   <form>
     
     <input
-      type="text" onChange={handleInput} placeholder="Buscar..."
+      type="text" onChange={handleInput} placeholder={t('search')}
     />
   </form>
 </div>;

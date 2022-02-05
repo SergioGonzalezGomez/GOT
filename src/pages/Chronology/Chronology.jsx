@@ -3,6 +3,8 @@ import { getCharacters } from '../../api/fetchToApi';
 import { Context } from "../../App";
 import { ChronologyCard } from "../../components/ChronologyCard/ChronologyCard";
 import './Chronology.scss';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 export const Chronology = () => {
   const {page, setPage,setSearch} = React.useContext(Context);
@@ -21,7 +23,10 @@ export const Chronology = () => {
       document.body.classList.remove("home");
   }, [page]);
   
-  return <div>
+  return (
+  
+    <SimpleBar className="simplebar-heigth" style={{ maxHeight: "70vh" }}>
+  <div>
     <button className="chronology-button" onClick={() => setDirection(!direction)}>O</button>
     <div className="chronology-list">
 
@@ -40,5 +45,6 @@ export const Chronology = () => {
       })}
 
       </div>
-    </div>;
+    </div>
+    </SimpleBar>);
 };
