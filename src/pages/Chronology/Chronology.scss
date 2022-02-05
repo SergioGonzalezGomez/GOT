@@ -1,0 +1,36 @@
+.chronology-list{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 100px 100px;
+    :nth-child(2n){
+        margin-top: 160px;
+    }
+   
+
+}
+
+
+.chronology-button {
+    padding: 10px 13px;
+    border-radius: 180px;
+    background-color: inherit;
+    color: whitesmoke;
+    border: solid 2px whitesmoke;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+    .chronology-list{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 300px 300px;
+    
+        :nth-child(2n){
+            margin-top: 150px;
+        }
+    
+    }
+    
+   
+  }

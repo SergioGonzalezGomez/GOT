@@ -20,20 +20,22 @@ export const Chronology = () => {
       document.body.classList.remove("home");
   }, [page]);
   
-  return <div className="chronology-list">
-    <button onClick={() => setDirection(!direction)}>!!!!</button>
+  return <div>
+    <button className="chronology-button" onClick={() => setDirection(!direction)}>O</button>
+    <div className="chronology-list">
      {characters.length !== 0 && characters.filter(character => character.age != null && character.age.age > 0).sort((a, b) => {
        
        if (a.age.age > b.age.age) {
          return direction ? 1 : -1;
        }
        if (a.age.age < b.age.age) {
-         return direction ? -1 : 1;
+         return direction ? -1 : 1; 
        }
        return 0;
        
      }).map((character) => {
         return <ChronologyCard key={character.id} character={character} />
       })}
+      </div>
     </div>;
 };
