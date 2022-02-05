@@ -40,7 +40,12 @@ function App() {
               <Route path="/chronology" element={<Chronology />} />
             </Routes>
           </div>
+         { console.log(page)}
+          {(page !== "CharactersDetail" &&
+          page !== "HousesDetail") &&
           <Footer />
+        }
+         
         </Router>
       </Context.Provider>
     </div>

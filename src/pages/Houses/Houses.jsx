@@ -3,6 +3,8 @@ import {getHouses} from '../../api/fetchToApi';
 import {HousesCard} from '../../components/HousesCard/HousesCard';
 import { Context } from "../../App";
 import './Houses.scss';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 export const Houses = ({search}) => {
   const {page, setPage, setSearch} = React.useContext(Context);
@@ -31,10 +33,14 @@ export const Houses = ({search}) => {
 
   const resultHouses = filteredHouses.length > 0 ? filteredHouses : houses
 
-  return <div className="houses-list">
+  return (
+    <SimpleBar className="simplebar-heigth" style={{ maxHeight: "70vh" }}>
+  <div className="houses-list">
     {resultHouses.map((house) => {
         return <HousesCard key={house.id} house={house} />
       })}
-  </div>;
+  </div>
+  </SimpleBar>
+  );
   
 };

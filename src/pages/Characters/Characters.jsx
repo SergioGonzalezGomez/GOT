@@ -3,6 +3,8 @@ import {getCharacters} from '../../api/fetchToApi';
 import { CharactersCard } from '../../components/CharactersCard/CharactersCard';
 import './Characters.scss';
 import { Context } from "../../App";
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 export const Characters = ({search}) => {
   const {page, setPage, setSearch} = React.useContext(Context);
@@ -29,11 +31,15 @@ export const Characters = ({search}) => {
 
   const resultCharacters = filteredCharacters.length > 0 ? filteredCharacters : characters
   
-  return <div className="characters-list">
+  return (
+    <SimpleBar className="simplebar-heigth" style={{ maxHeight: "70vh" }}>
+  <div className="characters-list">
       {resultCharacters.map((character) => {
         return <CharactersCard key={character.id} character={character} />
       })}
-  </div>;
+  </div>
+  </SimpleBar>
+  );
   
 };
 
