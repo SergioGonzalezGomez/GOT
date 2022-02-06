@@ -10,9 +10,9 @@ export const Chronology = () => {
   const {page, setPage,setSearch} = React.useContext(Context);
   const [characters, setCharacters] = useState([]);
   const [direction, setDirection] = useState(true);
-  console.log(direction);
+  
 
-  React.useEffect(() => {
+  useEffect(() => {
     setSearch('')
     getCharacters().then((data) => setCharacters(data))
     setPage("Chronology");
@@ -26,11 +26,14 @@ export const Chronology = () => {
   return (
   
     <SimpleBar className="simplebar-heigth" style={{ maxHeight: "70vh" }}>
-  <div>
+  <div className="chronology-container">
+    
     <button className="chronology-button" onClick={() => setDirection(!direction)}>O</button>
+    {direction === true ? <img className="chronology-img" src="./images/down.png" alt="down-arrow" /> : <img className="chronology-img" src="./images/up.png" alt="up-arrow" /> }
+    
     <div className="chronology-list">
 
-     {characters.length !== 0 && characters.filter(character => character.age != null && character.age.age > 0).sort((a, b) => {
+     {characters.length !== 0 && characters.filter(character => character.age !== null && character.age.age > 0).sort((a, b) => {
        
        if (a.age.age > b.age.age) {
          return direction ? 1 : -1;
