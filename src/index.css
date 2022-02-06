@@ -20,7 +20,13 @@ body.home{
 }
 
 .main{
-  min-height: 75vh;
+  min-height: 60vh;
+}
+
+@media (min-width: 1024px) {  
+  .main{
+    min-height: 75vh;
+  }
 }
 
 @font-face {
