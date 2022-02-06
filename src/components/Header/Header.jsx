@@ -7,10 +7,10 @@ import "./Header.scss";
 
 export const Header = () => {
   const { page, setSearch,changeLanguage } = React.useContext(Context);
-  console.log(page);
+  
   const changeSearch = (value) =>{
     setSearch(value);
-    console.log(value)
+    
   }
 
   return (

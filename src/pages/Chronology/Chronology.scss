@@ -1,11 +1,19 @@
-.chronology-list{
+.chronology-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chronology-list {
     display: grid;
     justify-content: center;
     grid-template-columns: 100px 100px;
-    :nth-child(2n){
+
+    :nth-child(2n) {
         margin-top: 160px;
     }
-   
+
 
 }
 
@@ -16,21 +24,27 @@
     background-color: inherit;
     color: whitesmoke;
     border: solid 2px whitesmoke;
-    margin-bottom: 10px;
+
     cursor: pointer;
 }
 
+.chronology-img {
+    width: 25px;
+    height: 45px;
+    margin-right: 2px;
+}
+
 @media (min-width: 1024px) {
-    .chronology-list{
+    .chronology-list {
         display: grid;
         justify-content: center;
         grid-template-columns: 300px 300px;
-    
-        :nth-child(2n){
+
+        :nth-child(2n) {
             margin-top: 150px;
         }
-    
+
     }
-    
-   
-  }
+
+
+}
