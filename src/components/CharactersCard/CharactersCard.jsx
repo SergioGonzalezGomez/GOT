@@ -8,6 +8,7 @@ export const CharactersCard = ({character}) => {
   character.image = character.name === "Grenn" ?   "./images/grenn.webp" : character.image;
   character.image = !character.image  ?  "./images/defaultcharacter.jpg" : character.image;
   return <div className="charactercard-container">
+    <p className="hide">{character.name}</p> 
     <Link to={generatePath("/characters/:name", {name: character.name})}>
     <img className="charactercard-img" src={character.image} alt={character.name} />
     </Link>
